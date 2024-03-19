@@ -8,4 +8,5 @@ mysql -u root -p"mysql" -e "use gra; select * from analytical_models where enabl
 
 git add -A
 git commit -m "Copying latest Gurucul model configs"
+git push
 
