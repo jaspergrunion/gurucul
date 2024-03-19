@@ -1,4 +1,5 @@
 #!/bin/bash
+# Script to pull model configuration files from Gurucul and back up to git
 
 # Create current date to use in file name
 # current_date=$(date +"%Y-%m-%d")
