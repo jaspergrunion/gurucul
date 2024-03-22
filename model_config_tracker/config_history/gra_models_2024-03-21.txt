@@ -19,3 +19,10 @@ classifier_group: ENTITY
      template_id: 39
         category: Frequency Analysis
          enabled: 1
+*************************** 4. row ***************************
+              id: 999
+    anomaly_name: Super Model 4
+classifier_group: ENTITY
+     template_id: 39
+        category: Frequency Analysis
+         enabled: 1
