@@ -5,3 +5,4 @@ INSERT INTO analytical_models (id, anomaly_name, classifier_group, template_id, 
 INSERT INTO analytical_models (id, anomaly_name, classifier_group, template_id, category, enabled) VALUES (895, "Super Model 2", "ENTITY", 28, "Pattern Analysis", 1);
 INSERT INTO analytical_models (id, anomaly_name, classifier_group, template_id, category, enabled) VALUES (999, "Super Model 3", "ENTITY", 39, "Frequency Analysis", 1);
 INSERT INTO analytical_models (id, anomaly_name, classifier_group, template_id, category, enabled) VALUES (999, "Super Model 4", "ENTITY", 39, "Frequency Analysis", 1);
+INSERT INTO analytical_models (id, anomaly_name, classifier_group, template_id, category, enabled) VALUES (999, "Super Model 5", "ENTITY", 39, "Frequency Analysis", 1);
