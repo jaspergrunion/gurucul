@@ -7,8 +7,8 @@ echo "Git directory: $git_dir"
 echo "Output directory: $output_dir"
 
 # Pull from git to make sure files are synced
-echo "Pull latest from Git"
-git -C $git_dir pull
+# echo "Pull latest from Git"
+# git -C $git_dir pull
 
 # Create current date to use in file name
 current_date=$(date +"%Y-%m-%d")
