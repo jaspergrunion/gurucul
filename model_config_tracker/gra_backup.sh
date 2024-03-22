@@ -11,8 +11,8 @@ echo "Pull latest from Git"
 git -C $git_dir pull
 
 # Create current date to use in file name
-# current_date=$(date +"%Y-%m-%d")
-current_date=$(date +"%Y-%m-%d-%H-%M-%S")
+current_date=$(date +"%Y-%m-%d")
+# current_date=$(date +"%Y-%m-%d-%H-%M-%S")
 echo "Running model backup for $current_date"
 
 # Connect to MySQL and pull model configs
