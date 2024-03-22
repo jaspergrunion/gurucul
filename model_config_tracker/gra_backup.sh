@@ -16,7 +16,7 @@ current_date=$(date +"%Y-%m-%d-%H-%M-%S")
 echo "Running model backup for $current_date"
 
 # Connect to MySQL and pull model configs
-mysql -h local -u root -p"mysql" -e "use gra; select * from analytical_models where enabled=1\G;" > "$output_dir/gra_models_$current_date.txt"
+mysql -h localhost -u root -p"mysql" -e "use gra; select * from analytical_models where enabled=1\G;" > "$output_dir/gra_models_$current_date.txt"
 
 latest_file=$(find $output_dir -type f -print | sort -r | head -1)
 echo "Latest file: $latest_file"
