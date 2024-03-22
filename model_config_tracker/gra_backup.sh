@@ -7,16 +7,16 @@ echo "Git directory: $git_dir"
 echo "Output directory: $output_dir"
 
 # Pull from git to make sure files are synced
+echo "Pull latest from Git"
 git -C $git_dir pull
 
 # Create current date to use in file name
 # current_date=$(date +"%Y-%m-%d")
 current_date=$(date +"%Y-%m-%d-%H-%M-%S")
-
 echo "Running model backup for $current_date"
 
 # Connect to MySQL and pull model configs
-mysql -u root -p"mysql" -e "use gra; select * from analytical_models where enabled=1\G;" > "$output_dir/gra_models_$current_date.txt"
+mysql -h local -u root -p"mysql" -e "use gra; select * from analytical_models where enabled=1\G;" > "$output_dir/gra_models_$current_date.txt"
 
 latest_file=$(find $output_dir -type f -print | sort -r | head -1)
 echo "Latest file: $latest_file"
