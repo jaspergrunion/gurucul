@@ -24,7 +24,7 @@ if cmp -s $latest_file $compare_file; then
     rm $latest_file
 else
     echo "Files are different, commit to Git"
-    echo "File differences"
+    echo "File differences:"
     diff $latest_file $compare_file
     git add -A "$target_dir/*.txt"
     git commit -m "Copying latest Gurucul model configs - $current_date"
