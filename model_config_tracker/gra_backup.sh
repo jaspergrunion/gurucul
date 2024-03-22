@@ -16,9 +16,10 @@ current_date=$(date +"%Y-%m-%d")
 echo "Running model backup for $current_date"
 
 # Connect to MySQL and pull model configs
-mysql -h localhost -u root -p"mysql" -e "use gra; select * from analytical_models where enabled=1\G;" > "$output_dir/gra_models_$current_date.txt"
+# mysql -h localhost -u root -p"mysql" -e "use gra; select * from analytical_models where enabled=1\G;" > "$output_dir/gra_models_$current_date.txt"
+mysql -h localhost -u root -p"mysql" -e "use gra; select * from analytical_models where enabled=1\G;" > "$output_dir/temp.txt"
 
-latest_file=$(find $output_dir -type f -print | sort -r | head -1)
+latest_file=$(find $output_dir/temp.txt -type f -print | sort -r | head -1)
 echo "Latest file: $latest_file"
 
 compare_file=$(find $output_dir -type f -print | sort -r | head -2 | tail -1)
@@ -32,6 +33,7 @@ else
     echo "Files are different, commit to Git"
     echo "File differences:"
     diff $latest_file $compare_file
+    mv "$output_dir/temp.txt" "$output_dir/gra_models_$current_date.txt"
     git -C $git_dir add -A "$output_dir/*.txt"
     git -C $git_dir commit -m "Copying latest Gurucul model configs - $current_date"
     git -C $git_dir push
